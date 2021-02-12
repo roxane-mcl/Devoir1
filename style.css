@@ -1,3 +1,14 @@
+.vache .image {
+    position:fixed;
+    margin-left: 1vw;
+    margin-top: 30vw;
+}
+
+body {
+    background-color: rgb(226, 226, 226);
+}
+   
+
 .main {
     margin-left: 10vw;
     margin-right: 10vw;
@@ -7,12 +18,16 @@
 .titre {
     font-family: Bodoni Moda;
     font-size: 300%;
+    line-height: 120%;
+    margin-bottom: 12px;
 }
 
 .paragraphe {
     margin-bottom: 2vw;
     font-family: Roboto;
     font-weight: lighter;
+    font-size: 16px;
+    background-color: white;
 }
 
 .lien {
@@ -28,19 +43,35 @@
     background: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(48,253,29,1) 27%, rgba(248,252,69,1) 81%, rgba(252,170,69,1) 100%);
 }
 
-.texte {
+.presentation>.texte {
     margin-right: 30vw;
 }
 
 .presentation {
-    display: flex;
-    flex-direction: row;
+   /* display: flex;
+    flex-direction: row;*/
+    position: relative;
+    z-index: 2;
 }
 
-.analyse-oeuvre {
+.analyse-oeuvre>.texte {
     margin-left: 30vw;
 }
 
+.presentation>.image {
+    width: 50vw;
+    /*align-self: center;*/
+    margin-top: -41vw;
+    margin-left: 30vw;
+    position: absolute;
+    z-index: -1;
+}
+
 .image {
-    width: 20vw;
+    filter: grayscale(100%);
+    transition: all 0.3s cubic-bezier(0.38, 0.39, 0.69, 0.7);
+}
+
+.image:hover {
+    filter: grayscale(0%);
 }
