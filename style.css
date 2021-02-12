@@ -27,3 +27,20 @@
     background: rgb(0,255,252);
     background: linear-gradient(90deg, rgba(0,255,252,1) 0%, rgba(48,253,29,1) 27%, rgba(248,252,69,1) 81%, rgba(252,170,69,1) 100%);
 }
+
+.texte {
+    margin-right: 30vw;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: row;
+}
+
+.analyse-oeuvre {
+    margin-left: 30vw;
+}
+
+.image {
+    width: 20vw;
+}
