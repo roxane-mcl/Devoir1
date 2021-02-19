@@ -6,8 +6,8 @@ body {
 .main {
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-top: 10vw;
-    margin-bottom: 10vw;
+    margin-top: 8vw;
+    margin-bottom: 8vw;
 }
 
 .titre {
@@ -37,38 +37,51 @@ body {
     background: black;
 }
 
-.presentation>.texte {
-    margin-right: 30vw;
+.image{
+    width: 37vw;
 }
 
-.presentation {
-   /* display: flex;
-    flex-direction: row;*/
-    position: relative;
-    z-index: 2;
+.galerie {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
 }
 
-.analyse-oeuvre>.texte {
-    margin-left: 30vw;
-}
-
-.presentation>.image {
-    width: 50vw;
-    /*align-self: center;*/
-    margin-top: -41vw;
-    margin-left: 30vw;
+.overlay {
     position: absolute;
-    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    background-color: #00000000;
+  }
+  
+.container:hover .overlay {
+    background-color: #0000008e
 }
 
-.hovering-image{
-    display: none;
+.container:hover .legend {
+    opacity: 1;
+}
+  
+.legend {
+    color: white;
+    opacity: 0;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-span
-
-span:hover + .hovering-image{
-    position: static;
-    margin-left: 1vw;
-    margin-top: 30vw;
-}
+.container {
+    position: relative;
+  }
