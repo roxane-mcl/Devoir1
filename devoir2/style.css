@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(226, 226, 226);
+}
+   
+
+.main {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
+
+.titre {
+    font-family: Bodoni Moda;
+    font-size: 300%;
+    line-height: 120%;
+    margin-bottom: 12px;
+}
+
+.paragraphe {
+    margin-bottom: 2vw;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 16px;
+    background-color: white;
+}
+
+.lien {
+    font-family: Roboto;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+
+.lien:hover {
+    color: white;
+    background: black;
+}
+
+.presentation>.texte {
+    margin-right: 30vw;
+}
+
+.presentation {
+   /* display: flex;
+    flex-direction: row;*/
+    position: relative;
+    z-index: 2;
+}
+
+.analyse-oeuvre>.texte {
+    margin-left: 30vw;
+}
+
+.presentation>.image {
+    width: 50vw;
+    /*align-self: center;*/
+    margin-top: -41vw;
+    margin-left: 30vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.hovering-image{
+    display: none;
+}
+
+span
+
+span:hover + .hovering-image{
+    position: static;
+    margin-left: 1vw;
+    margin-top: 30vw;
+}
