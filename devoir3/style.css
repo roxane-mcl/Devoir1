@@ -82,3 +82,7 @@ body {
     margin-top: 10vw;
     margin-bottom: 0vw; //pourquoi le scroll en bas ??
 }
+
+.bold{
+    font-weight: 600;
+}
