@@ -66,12 +66,19 @@ body {
     z-index: 2;
 }
 
-.image{
+.image1{
+    opacity: 1;
+    width: 300px;
+}
+
+.image2{
+    opacity: 0;
     width: 300px;
 }
 
 .draggableDiv {
     position: absolute;
+    
 }
 
 .paragraphe {

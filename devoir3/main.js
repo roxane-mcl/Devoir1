@@ -36,3 +36,24 @@ function placeImgs() {
 window.onload = () => {
     placeImgs();
 };
+
+
+document.querySelectorAll('.draggableDiv').forEach(div => {
+    div.onmousedown = function(e) {
+        document.querySelectorAll('.draggableDiv').forEach(div => div.style.zIndex = 0);
+        div.style.zIndex = 1;
+        
+        const rect = div.getBoundingClientRect();
+        offsetX = rect.left - e.clientX;
+        offsetY = rect.top - e.clientY;
+
+        window.onmousemove = function(e) {
+            div.style.left = e.clientX + offsetX +"px";
+            div.style.top = e.clientY + offsetY +"px";
+        }
+        window.onmouseup = function(e) {
+            window.onmousemove = null;
+            window.onmouseup = null;
+        }
+    }
+});
