@@ -37,25 +37,30 @@ body {
 }
 
 .logo{
+    position: fixed;
     width: 150px;
+    z-index: 2;
 }
 
 .topright{
     position: fixed;
     top: 15px;
     right: 20px;
+    z-index: 2;
 }
 
 .bottomright{
     position: fixed;
     bottom: 15px;
     right: 20px;
+    z-index: 2;
 }
 
 .bottomleft{
     position: fixed;
     bottom: 15px;
     left: 20px;
+    z-index: 2;
 }
 
 .image{
