@@ -24,6 +24,7 @@ body {
 .texte {
     font-family: Work Sans;
     font-size: 180%;
+    font-weight: 600;
 }
 
 .lien {
@@ -38,6 +39,8 @@ body {
 
 .logo{
     position: fixed;
+    top: 20px;
+    left: 20px;
     width: 150px;
     z-index: 2;
 }
@@ -69,4 +72,13 @@ body {
 
 .draggableDiv {
     position: absolute;
+}
+
+.paragraphe {
+    font-size: 60%;
+    font-weight: 400;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-top: 10vw;
+    margin-bottom: 0vw; //pourquoi le scroll en bas ??
 }
