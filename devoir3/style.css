@@ -66,13 +66,16 @@ body {
     z-index: 2;
 }
 
+.image {
+    width: 300px;
+}
 .image1{
-    opacity: 1;
+    position: absolute;
     width: 300px;
 }
 
 .image2{
-    opacity: 0;
+    position:absolute;
     width: 300px;
 }
 
