@@ -18,12 +18,9 @@ document.querySelectorAll('.draggableDiv').forEach(div => {
     }
 });
 
-
-
-
 function placeImg(img) {
     const maxX = window.innerWidth - img.clientWidth;
-    const maxY = window.innerHeight - img.clientHeight;
+    const maxY = window.innerHeight - img.clientHeight; //le clientwidth retourne 0 pcq pas défini dans le CSS; à régler
 
     const x = Math.floor(Math.random() * maxX);
     const y = Math.floor(Math.random() * maxY);
