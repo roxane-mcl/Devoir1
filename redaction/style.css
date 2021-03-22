@@ -1,11 +1,11 @@
 body {
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(248, 147, 255);
 }
    
 
 .main {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
     margin-top: 8vw;
     margin-bottom: 8vw;
 }
@@ -15,6 +15,7 @@ body {
     font-size: 300%;
     line-height: 120%;
     margin-bottom: 12px;
+    color: white
 }
 
 .paragraphe {
@@ -34,54 +35,5 @@ body {
 
 .lien:hover {
     color: white;
-    background: black;
+    background: rgb(243, 77, 255);
 }
-
-.image{
-    width: 37vw;
-}
-
-.galerie {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2vw;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    transition: .5s ease;
-    background-color: #00000000;
-  }
-  
-.container:hover .overlay {
-    background-color: #0000008e
-}
-
-.container:hover .legend {
-    opacity: 1;
-}
-  
-.legend {
-    color: white;
-    opacity: 0;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.container {
-    position: relative;
-  }
