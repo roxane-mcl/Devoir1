@@ -1,16 +1,34 @@
 document.querySelectorAll('.draggableDiv').forEach(div => {
     div.onmousedown = function(e) {
-        document.querySelectorAll('.draggableDiv').forEach(div => div.style.zIndex = 0);
-        div.style.zIndex = 1;
+        draggableDivs = document.querySelectorAll('.draggableDiv');
+
+        // on enregistre l'ordre d'empilement z initial du div qu'on vas mettre à l'avant-plan
+        zIndexInitial = parseInt(div.style.zIndex);
+
+        // on effectue les changement d'ordre d'empilement z sur toutes les images 
+        for(i = 0; i < draggableDivs.length; i++) {
+            if(draggableDivs[i].style.zIndex == zIndexInitial) {
+                // le div actuel est celui avec lequel l'utilisateur vient d'interagir; on veut le mettre à l'avant-plan
+                // on lui donne l'index z maximal, qui correspond au nombre de divs existants
+                draggableDivs[i].style.zIndex = draggableDivs.length;
+            } else if(draggableDivs[i].style.zIndex > zIndexInitial) {
+                // le div actuel était empilé par-dessus le div avec lequel l'utilisateur vient d'interagir; on veut réduire son ordre dans l'empilement
+                // on soustrait 1 à son ordre d'empilement précédent
+                draggableDivs[i].style.zIndex = parseInt(draggableDivs[i].style.zIndex) - 1;
+            }
+        }
+        // une fois cette boucle exécuté, toutes les images ont encore des indexes d'empilement z dans [1, <nombre de divs>].
+        // l'ordre d'empilement relatif d'une image à une autre reste identique sauf pour l'image que l'on vient de mettre au premier plan.
         
-        const rect = div.getBoundingClientRect();
-        offsetX = rect.left - e.clientX;
-        offsetY = rect.top - e.clientY;
+        // il semble y avoir un décalage entre le style appliqué à l'image (ce qu'on controlle réellement pour la déplacer) et ce que getBoundingClientRect retourne. cette solution élimine le "saut" que fait l'image au tout début du déplacement
+        offsetX = parseInt(div.style.left) - e.clientX;
+        offsetY = parseInt(div.style.top) - e.clientY;
 
         window.onmousemove = function(e) {
-            div.style.left = e.clientX + offsetX +"px";
-            div.style.top = e.clientY + offsetY +"px";
+            div.style.left = offsetX + e.clientX + "px";
+            div.style.top = offsetY + e.clientY + "px";
         }
+
         window.onmouseup = function(e) {
             window.onmousemove = null;
             window.onmouseup = null;
@@ -30,23 +48,20 @@ function placeImg(img) {
 }
 
 function placeImgs() {
-    document.querySelectorAll('.draggableDiv').forEach(placeImg);
+    draggableDivs = document.querySelectorAll('.draggableDiv');
+    for(i = 0; i < draggableDivs.length; i++) {
+        // on spécifie un ordre d'empilage z initial; les valeurs occupent la plage [1, <nombre de divs>]
+        draggableDivs[i].style.zIndex = i + 1;
+        // on place les images dans l'espace x y
+        placeImg(draggableDivs[i]);
+    }
 }
-
-
-
-
 
 window.onload = () => {
     placeImgs();
     setImgsDisplay();
     setDblClicks();
 };
-
-
-
-
-
 
 function setImgsDisplay() {
     document.querySelectorAll('.image1').forEach((img) => {
